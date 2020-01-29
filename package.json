@@ -1,0 +1,36 @@
+{
+  "name": "gridsome-source-buttercms",
+  "version": "1.0.0",
+  "description": "Source plugin for pulling blog posts, authors, categories, tags, and content fields into Gridsome from ButterCMS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "prettier --single-quote --write *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ButterCMS/gridsome-source-buttercms.git"
+  },
+  "author": "Gift Egwuenu <laurandidi21@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "gridsome",
+    "gridsome-plugin",
+    "buttercms",
+    "vuejs",
+    "gridsome-source-plugin"
+  ],
+  "bugs": {
+    "url": "https://github.com/ButterCMS/gridsome-source-buttercms/issues"
+  },
+  "homepage": "https://github.com/ButterCMS/gridsome-source-buttercms#readme",
+  "dependencies": {
+    "buttercms": "^1.1.4",
+    "camelcase": "^5.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "prettier": "^1.18.2"
+  }
+}
