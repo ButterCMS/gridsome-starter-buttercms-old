@@ -1,6 +1,6 @@
-# gridsome-source-buttercms
+# Gridsome Starter Project
 
-Source plugin for pulling blog posts, authors, categories, tags, and content fields into [Gridsome](https://gridsome.org) from [ButterCMS](ttps://buttercms.com).
+Sample starter project that uses the [ButterCMS Gridsome Source Plugin](https://github.com/ButterCMS/gridsome-source-buttercms) for pulling blog posts, authors, categories, tags, and content fields into [Gridsome](https://gridsome.org) from [ButterCMS](https://buttercms.com).
 
 ## Install
 
@@ -32,3 +32,7 @@ module.exports = {
   ]
 }
 ```
+
+# Learn more
+
+ButterCMS can be used as a [gridsome cms](https://buttercms.com/gridsome-cms/) and [gridsome blog engine](https://buttercms.com/gridsome-blog-engine/). This starter project demonstrates how to use Butter with Gridsome.
