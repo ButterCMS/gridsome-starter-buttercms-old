@@ -1,4 +1,3 @@
-
 # Default starter for Gridsome
 
 This is the project you get when you run `gridsome create new-project`.
@@ -22,7 +21,7 @@ This is the project you get when you run `gridsome create new-project`.
    CD into the project and `npm install gridsome-source-buttercms` to install the ButterCMS gridsome npm module.
    Let’s also include the npm modules for handling SCSS styling: `npm install -D sass-loader node-sass`
 2. Create a free account on ButterCMS.
-3. Copy and save off your AuthToken from the welcome screen or Profile >> settings (it looks like this: a985f3f782f2115cd0f1b3ed12b52ec12295d6bb.
+3. Copy and save off your AuthToken from the welcome screen or Profile >> settings (it looks like this: a985f3f782f2005...)
 4. Add a second Blog Post to your ButterCMS account by going to Blog Posts, then click the green “Write New Post” button at the top and write and Publish your post.
 5. Moving over to your project code, find your gridsome.config.js file and add to plugins:
    `{ use: "gridsome-source-buttercms", options: { authToken: 'a985f3f782f2005...,<your AuthToken>', collections: [''], pages: '', pageTypes: '' }`
