@@ -9,7 +9,7 @@ module.exports = {
   plugins: [{
     use: "gridsome-source-buttercms",
     options: {
-      authToken: '<your AuthToken>',
+      authToken: '0126997a0f359dffdf0a4200b9c229161c7610ec', // Auth token belongs to a test account with test data
       collections: [''],
       pages: '',
       pageTypes: 'customer_case_study'
