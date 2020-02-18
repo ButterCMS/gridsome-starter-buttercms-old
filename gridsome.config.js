@@ -9,10 +9,9 @@ module.exports = {
   plugins: [{
     use: "gridsome-source-buttercms",
     options: {
-      authToken: '<your AuthToken>',
       authToken: '0126997a0f359dffdf0a4200b9c229161c7610ec',
       collections: [''],
-      pages: '',
+      pages: 'about_page',
       pageTypes: 'customer_case_study'
     }
   }
