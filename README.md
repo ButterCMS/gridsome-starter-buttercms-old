@@ -1,4 +1,6 @@
-# Default starter for Gridsome
+# Gridsome ButterCMS Starter
+
+* Demo: [https://buttercms-gridsome-starter.netlify.app/](https://buttercms-gridsome-starter.netlify.app/)
 
 This is the project you get when you run `gridsome create new-project`.
 
