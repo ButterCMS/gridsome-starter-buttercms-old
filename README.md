@@ -8,12 +8,10 @@ This is the project you get when you run `gridsome create new-project`.
 
 `npm install --global @gridsome/cli`
 
-### 2. Create a Gridsome project
+### 2. Create a Gridsome project by cloing the ButterCMS Starter
 
-1. `gridsome new my-gridsome-site https://github.com/ButterCMS/gridsome-starter-buttercms`
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+`gridsome new my-gridsome-site https://github.com/ButterCMS/gridsome-starter-buttercms`
+
 
 ### 3. Taking the default Gridsome project to ButterCMS
 
