@@ -10,17 +10,14 @@ This is the project you get when you run `gridsome create new-project`.
 
 ### 2. Create a Gridsome project
 
-1. `gridsome create my-gridsome-site` to install default starter
+1. `gridsome new my-gridsome-site https://github.com/ButterCMS/gridsome-starter-buttercms`
 2. `cd my-gridsome-site` to open the folder
 3. `gridsome develop` to start a local dev server at `http://localhost:8080`
 4. Happy coding 🎉🙌
 
 ### 3. Taking the default Gridsome project to ButterCMS
 
-1. Prepare to create a Gridsome project:
-   `npm install --global @gridsome/cli` to update/install the gridsome CLI.
-   `gridsome create <new_project_name>` to create your Gridsome project.
-   CD into the project and `npm install gridsome-source-buttercms` to install the ButterCMS gridsome npm module.
+1. CD into the project and `npm install gridsome-source-buttercms` to install the ButterCMS gridsome npm module.
    Let’s also include the npm modules for handling SCSS styling: `npm install -D sass-loader node-sass`
 2. Create a free account on ButterCMS.
 3. Copy and save off your AuthToken from the welcome screen or Profile >> settings (it looks like this: a985f3f782f2005...)
