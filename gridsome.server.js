@@ -6,11 +6,30 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = function (api) {
-  api.loadSource(({ addCollection }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
-  })
+  api.createPages(async ({ graphql, createPage }) => {
+    const { data } = await graphql(`
+        {
+          allButterPosts {
+            edges {
+              node {
+                slug
+              }
+            }
+          }
+        }
+      `);
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
+    // Create blog articles pages.
+    const posts = data.allButterPosts.edges
+
+    posts.forEach((post) => {
+      createPage({
+        path: `/blog/${post.node.slug}`,
+        component: './src/templates/Post.vue',
+        context: {
+          slug: post.node.slug,
+        },
+      })
+    })
   })
 }

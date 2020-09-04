@@ -2,30 +2,37 @@
 
 * Demo: [https://buttercms-gridsome-starter.netlify.app/](https://buttercms-gridsome-starter.netlify.app/)
 
-This is the project you get when you run `gridsome create new-project`.
 
 ### 1. Install/Update Gridsome CLI tool
 
 `npm install --global @gridsome/cli`
 
-### 2. Create a Gridsome project by cloing the ButterCMS Starter
+### 2. Run from your CLI
 
 `gridsome new my-gridsome-site https://github.com/ButterCMS/gridsome-starter-buttercms`
 
 
-### 3. Taking the default Gridsome project to ButterCMS
+### 3. In gridsome.config.js, replace the test Auth token (0126997a0f359dffdf0a4200b9c229161c7610ec) with the Auth token from your ButterCMS account
 
-1. CD into the project and `npm install gridsome-source-buttercms` to install the ButterCMS gridsome npm module.
-   Let’s also include the npm modules for handling SCSS styling: `npm install -D sass-loader node-sass`
-2. Create a free account on ButterCMS.
-3. Copy and save off your AuthToken from the welcome screen or Profile >> settings (it looks like this: a985f3f782f2005...)
-4. Add a second Blog Post to your ButterCMS account by going to Blog Posts, then click the green “Write New Post” button at the top and write and Publish your post.
-5. Moving over to your project code, find your gridsome.config.js file and add to plugins:
-   `{ use: "gridsome-source-buttercms", options: { authToken: 'a985f3f782f2005...,<your AuthToken>', collections: [''], pages: '', pageTypes: '' }`
+```
+module.exports = {
+  siteName: 'Gridsome',
+  plugins: [{
+    use: "gridsome-source-buttercms",
+    options: {
+      authToken: '0126997a0f359dffdf0a4200b9c229161c7610ec', // Auth token belongs to a test account with test data
+      collections: [''],
+      pages: '',
+      pageTypes: 'customer_case_study'
+    }
+  }
+  ]
+}
+```
 
-6. Open `index.vue` in the pages folder (the default view) and make the changes described below in “Change pages/Index.vue”
-7. Add a new vue component to the components folder, PostCard.vue, using the code below in “Add PostCard.vue” to components.
-8. From your CLI, run `gridsome develop` and you should see two post summaries: the default ButterCMS post and your post.
+### 4. CD into the project and run it
+`cd gridsome-starter-buttercms`
+`gridsome develop`
 
 # Learn more
 
