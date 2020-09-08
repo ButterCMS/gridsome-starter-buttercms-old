@@ -9,7 +9,9 @@
       />
     </div>
     <div class="post-card__content">
-      <h2 class="post-card__title" v-html="post.title" />
+      <h2 class="post-card__title">
+        <g-link :to="`blog/${post.slug}`">{{post.title}}</g-link>
+      </h2>
       <p class="post-card__description" v-html="post.summary" />
       <PostMeta class="post-card__meta" :post="post" />
     </div>
@@ -17,14 +19,14 @@
 </template>
 
 <script>
-import PostMeta from "~/components/PostMeta";
+import PostMeta from "~/components/PostMeta"
 
 export default {
   components: {
-    PostMeta
+    PostMeta,
   },
-  props: ["post"]
-};
+  props: ["post"],
+}
 </script>
 
 <style lang="scss">

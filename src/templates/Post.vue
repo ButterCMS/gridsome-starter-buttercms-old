@@ -1,74 +1,68 @@
 <template>
   <Layout>
     <div class="post-title">
-      <h1 class="post-title__text">
-        {{ $page.post.title }}
-      </h1>
+      <h1 class="post-title__text">{{ $page.post.edges[0].node.title }}</h1>
 
       <PostMeta :post="$page.post" />
-
     </div>
 
     <div class="post content-box">
       <div class="post__header">
-        <g-image alt="Featured image" v-if="$page.post.featured_image" :src="$page.post.featured_image" />
+        <g-image
+          alt="Featured image"
+          v-if="$page.post.edges[0].node.featured_image"
+          :src="$page.post.edges[0].node.featured_image"
+        />
       </div>
 
-      <div class="post__content" v-html="$page.post.content" />
+      <div class="post__content" v-html="$page.post.edges[0].node.body" />
 
       <div class="post__footer">
-        <PostTags :post="$page.post" />
+        <PostTags :post="$page.post.edges[0].node.post" />
       </div>
     </div>
 
     <div class="post-comments">
       <!-- Add comment widgets here -->
     </div>
-
-    <Author class="post-author" />
   </Layout>
 </template>
 
 <script>
-import PostMeta from "~/components/PostMeta";
-import PostTags from "~/components/PostTags";
-import Author from "~/components/Author.vue";
+import PostMeta from "~/components/PostMeta"
 
 export default {
   components: {
-    Author,
     PostMeta,
-    PostTags
   },
   metaInfo() {
     return {
-      title: this.$page.post.title,
+      title: this.$page.post.edges[0].node.title,
       meta: [
         {
           name: "summary",
-          content: this.$page.post.summary
-        }
-      ]
-    };
-  }
-};
+          content: this.$page.post.edges[0].node.summary,
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <page-query>
-query Post ($id: ID!) {
-  post: post (id: $id) {
-    id
-        title
-        published  (format: "MMMM Do, YYYY")
-        slug
-        summary
-        featured_image
-        tags {
-          name
+query postQuery ($slug: String!) {
+  post: allButterPosts(filter: { slug: { eq: $slug } }) {
+      edges {
+        node {
+          id
+          body
+          featured_image
+          summary
+          title
           slug
         }
-        body
-  }
+      }
+    }
 }
 </page-query>
 
