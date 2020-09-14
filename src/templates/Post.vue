@@ -120,4 +120,9 @@ query postQuery ($slug: String!) {
 .post-author {
   margin-top: calc(var(--space) / 2);
 }
+
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
 </style>
