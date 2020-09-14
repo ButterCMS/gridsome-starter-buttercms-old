@@ -9,10 +9,16 @@
 
 ### 2. Run from your CLI
 
-`gridsome new my-gridsome-site https://github.com/ButterCMS/gridsome-starter-buttercms`
+`gridsome create my-gridsome-site https://github.com/ButterCMS/gridsome-starter-buttercms`
+
+### 3. Create a ButterCMS account
+
+1. Create a free account on ButterCMS - https://buttercms.com/.
+3. Copy and save off your AuthToken from the welcome screen or Profile >> settings (it looks like this: a985f3f782f2005...)
+4. Add a second Blog Post to your ButterCMS account by going to Blog Posts, then click the green “Write New Post” button at the top and write and Publish your post.
 
 
-### 3. In gridsome.config.js, replace the test Auth token (0126997a0f359dffdf0a4200b9c229161c7610ec) with the Auth token from your ButterCMS account
+### 4. In gridsome.config.js, replace the test Auth token (0126997a0f359dffdf0a4200b9c229161c7610ec) with the Auth token from your ButterCMS account
 
 ```
 module.exports = {
