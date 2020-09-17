@@ -3,7 +3,7 @@
     <div class="post-title">
       <h1 class="post-title__text">{{ $page.post.edges[0].node.title }}</h1>
 
-      <PostMeta :post="$page.post" />
+      <div class="post-meta">Posted on {{ $page.post.edges[0].node.published }}</div>
     </div>
 
     <div class="post content-box">
@@ -58,6 +58,7 @@ query postQuery ($slug: String!) {
           body
           featured_image
           summary
+          published  (format: "MMMM Do, YYYY")
           title
           slug
         }
