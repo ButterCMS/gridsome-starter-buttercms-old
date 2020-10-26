@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <h1>Blog</h1>
     <!-- List posts -->
     <div class="posts">
       <PostCard

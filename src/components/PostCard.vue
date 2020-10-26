@@ -52,14 +52,14 @@ export default {
     overflow: hidden;
     border-radius: var(--radius) var(--radius) 0 0;
     flex-basis: 25%;
-    box-sizing: border-box;
-    padding: 10px;
     &:empty {
       display: none;
     }
   }
   &__content {
     flex-basis: 75%;
+    box-sizing: border-box;
+    padding: 0 10px;
   }
   &__image {
     width: 100%;
@@ -76,11 +76,6 @@ export default {
     margin-block-end: 0em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-  }
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.1);
   }
 
   &__tags {
