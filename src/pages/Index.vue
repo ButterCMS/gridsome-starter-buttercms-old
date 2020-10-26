@@ -28,6 +28,14 @@ query {
           name
           slug
         }
+        categories {
+          name
+          slug
+        }
+        author {
+          first_name
+          last_name
+        }
       }
     }
   }

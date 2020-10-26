@@ -1,5 +1,5 @@
 <template>
-  <div class="post-meta">Posted {{ post.published }}.</div>
+  <div class="post-meta">Posted {{ post.published }} by {{post.author.first_name}} {{post.author.last_name}}</div>
 </template>
 
 <script>

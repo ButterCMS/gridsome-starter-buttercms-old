@@ -12,6 +12,9 @@
       <h2 class="post-card__title">
         <g-link :to="`blog/${post.slug}`">{{post.title}}</g-link>
       </h2>
+      <div>
+        <small  class="post-card__category" v-for="category in post.categories" :key="category.slug">{{category.name}}</small>
+      </div>
       <p class="post-card__description" v-html="post.summary" />
       <PostMeta class="post-card__meta" :post="post" />
     </div>
@@ -38,6 +41,7 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    margin-bottom: 20px;
   }
 
   &__header {
@@ -48,6 +52,8 @@ export default {
     overflow: hidden;
     border-radius: var(--radius) var(--radius) 0 0;
     flex-basis: 25%;
+    box-sizing: border-box;
+    padding: 10px;
     &:empty {
       display: none;
     }
@@ -56,14 +62,7 @@ export default {
     flex-basis: 75%;
   }
   &__image {
-    border: 2px solid gray;
-    width: 80%;
-    box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    align-content: center;
+    width: 100%;
   }
   &__title {
     margin-top: 0;
@@ -99,6 +98,10 @@ export default {
     overflow: hidden;
     text-indent: -9999px;
     z-index: 0;
+  }
+  
+  &__category {
+    margin-right: 5px
   }
 }
 </style>
