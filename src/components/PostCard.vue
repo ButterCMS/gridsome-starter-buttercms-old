@@ -1,13 +1,13 @@
 <template>
   <div class="post-card__content-box">
-    <div class="post-card__header">
+    <g-link class="post-card__header" :to="`blog/${post.slug}`">
       <g-image
         alt="Cover image"
         v-if="post.featured_image"
         class="post-card__image"
         :src="post.featured_image"
       />
-    </div>
+    </g-link>
     <div class="post-card__content">
       <h2 class="post-card__title">
         <g-link :to="`blog/${post.slug}`">{{post.title}}</g-link>
@@ -58,8 +58,6 @@ export default {
   &__image {
     border: 2px solid gray;
     width: 80%;
-    margin-left: 20px;
-    margin-right: auto;
     box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     border: 1px solid #ddd;
