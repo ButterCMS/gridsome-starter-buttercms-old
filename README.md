@@ -12,10 +12,10 @@ npm install
 ### 2. Setup a ButterCMS account
 
 1. Create a free account on ButterCMS - https://buttercms.com/.
-2. Copy and save off your AuthToken from the welcome screen or Profile >> settings (it looks like this: a985f3f782f2005...)
+2. Copy and save off your read API token from the welcome screen or Profile >> settings (it looks like this: a985f3f782f2005...)
 3. Create and publish a new `customer_case_study` page type in your ButterCMS account by following simple steps https://buttercms.com/docs/api-client/gridsome#PagesPageType
 
-### 3. In gridsome.config.js, replace the test Auth token (0126997a0f359dffdf0a4200b9c229161c7610ec) with the Auth token from your ButterCMS account
+### 3. In gridsome.config.js, replace the auth token placeholder <your_token> with the read API token from your ButterCMS account
 
 ```
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
     {
       use: 'gridsome-source-buttercms',
       options: {
-        authToken: '56655b6ca9edd2b2fd0c8b6e51148cfb119987db', // change to your own auth token
+        authToken: '<your_token>', // change to your read API token
         collections: [''],
         pages: '',
         pageTypes: 'customer_case_study'
