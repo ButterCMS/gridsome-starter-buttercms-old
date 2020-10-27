@@ -16,10 +16,6 @@
       </div>
 
       <div class="post__content" v-html="$page.post.edges[0].node.body" />
-
-      <div class="post__footer">
-        <PostTags :post="$page.post.edges[0].node.post" />
-      </div>
     </div>
 
     <div class="post-comments">
@@ -34,6 +30,9 @@ import PostMeta from "~/components/PostMeta"
 export default {
   components: {
     PostMeta,
+  },
+  mounted () {
+    console.log(this.$page.post)
   },
   metaInfo() {
     return {
