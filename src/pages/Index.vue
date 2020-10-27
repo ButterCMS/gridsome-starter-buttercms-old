@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <h1>Blog</h1>
     <!-- List posts -->
     <div class="posts">
       <PostCard
@@ -27,6 +28,14 @@ query {
         tags {
           name
           slug
+        }
+        categories {
+          name
+          slug
+        }
+        author {
+          first_name
+          last_name
         }
       }
     }

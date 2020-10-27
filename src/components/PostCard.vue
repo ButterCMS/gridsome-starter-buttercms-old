@@ -1,17 +1,20 @@
 <template>
   <div class="post-card__content-box">
-    <div class="post-card__header">
+    <g-link class="post-card__header" :to="`blog/${post.slug}`">
       <g-image
         alt="Cover image"
         v-if="post.featured_image"
         class="post-card__image"
         :src="post.featured_image"
       />
-    </div>
+    </g-link>
     <div class="post-card__content">
       <h2 class="post-card__title">
         <g-link :to="`blog/${post.slug}`">{{post.title}}</g-link>
       </h2>
+      <div>
+        <small  class="post-card__category" v-for="category in post.categories" :key="category.slug">{{category.name}}</small>
+      </div>
       <p class="post-card__description" v-html="post.summary" />
       <PostMeta class="post-card__meta" :post="post" />
     </div>
@@ -38,6 +41,7 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    margin-bottom: 20px;
   }
 
   &__header {
@@ -54,18 +58,11 @@ export default {
   }
   &__content {
     flex-basis: 75%;
+    box-sizing: border-box;
+    padding: 0 10px;
   }
   &__image {
-    border: 2px solid gray;
-    width: 80%;
-    margin-left: 20px;
-    margin-right: auto;
-    box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    align-content: center;
+    width: 100%;
   }
   &__title {
     margin-top: 0;
@@ -79,11 +76,6 @@ export default {
     margin-block-end: 0em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-  }
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.1);
   }
 
   &__tags {
@@ -101,6 +93,10 @@ export default {
     overflow: hidden;
     text-indent: -9999px;
     z-index: 0;
+  }
+  
+  &__category {
+    margin-right: 5px
   }
 }
 </style>
