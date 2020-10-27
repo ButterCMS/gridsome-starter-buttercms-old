@@ -1,10 +1,15 @@
 <template>
-  <div class="post-meta">Posted {{ post.published }} by {{post.author.first_name}} {{post.author.last_name}}</div>
+  <div class="post-meta">
+    <span>Posted {{ post.published }}</span>
+    <span v-if="post.author">
+      by {{ post.author.first_name }} {{ post.author.last_name }}</span
+    >
+  </div>
 </template>
 
 <script>
 export default {
-  props: ["post"]
+  props: ["post"],
 };
 </script>
 
