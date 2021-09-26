@@ -6,15 +6,12 @@
 
 module.exports = {
   siteName: 'Gridsome',
-  plugins: [
-    {
-      use: 'gridsome-source-buttercms',
-      options: {
-        authToken: '0126997a0f359dffdf0a4200b9c229161c7610ec', // change to your read API token
-        collections: [''],
-        pages: '',
-        pageTypes: 'customer_case_study',
-      },
-    },
-  ],
+  plugins: [{
+    use: 'gridsome-source-buttercms',
+    options: {
+      authToken: '0126997a0f359dffdf0a4200b9c229161c7610ec', // change to your read API token
+      collections: [],
+      pageTypes: ['customer_case_study']
+    }
+  }]
 };
