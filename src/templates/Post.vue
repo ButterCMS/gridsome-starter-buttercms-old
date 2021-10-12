@@ -3,7 +3,7 @@
     <div class="post-title">
       <h1 class="post-title__text">{{ $page.post.edges[0].node.title }}</h1>
 
-      <PostMeta :post="$page.post" />
+      <PostMeta :post="$page.post.edges[0].node" />
     </div>
 
     <div class="post content-box">
@@ -59,6 +59,7 @@ query postQuery ($slug: String!) {
           summary
           title
           slug
+          published  (format: "MMMM Do, YYYY")
         }
       }
     }
